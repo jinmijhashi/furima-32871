@@ -41,7 +41,7 @@ Things you may want to cover:
 ### Association
 
 - has_many : items
-- has_many : buy
+- has_many : buys
 
 ## items テーブル
 
@@ -50,10 +50,10 @@ Things you may want to cover:
 | title               | string | null: false |
 | text                | text   | null: false |
 | category_id            | integer| null: false |
-| status_id              | integre | null: false |
-| sipping_id     | integer | null: false |
+| status_id              | integer | null: false |
+| sipping_id             | integer | null: false |
 | sipping_area_id        | integer | null: false |
-| days_to_ship_id        | inetger | null: false |
+| days_to_ship_id        | integer| null: false |
 | price               | integer | null: false |
 ### Association
 
@@ -70,17 +70,17 @@ Things you may want to cover:
 | address      | string | null: false |
 | building     | string |             |
 | phone        | string | null: false |
-| user_id      | string | null: false |
+| buy          | references| null: false foreign_key: true |
 | block        | string | null: false |
 ### Association
 
-- belongs_to :user_id
+- belongs_to :buy
 
 ## buy テーブル
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
-| user_id       | references  |  null: false, foreign_key: true      |
+| user      | references  |  null: false, foreign_key: true      |
 | item          | references  |  null: false, foreign_key: true      |
 | 
 
@@ -88,3 +88,4 @@ Things you may want to cover:
 
 - belongs_to : item
 - has_one : address
+- belongs_to : user
