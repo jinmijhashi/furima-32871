@@ -40,8 +40,8 @@ Things you may want to cover:
 
 ### Association
 
-- has_many : items
-- has_many : buys
+- has_many :items
+- has_many :buys
 
 ## items テーブル
 
@@ -55,11 +55,11 @@ Things you may want to cover:
 | sipping_area_id        | integer | null: false |
 | days_to_ship_id        | integer| null: false |
 | price               | integer | null: false |
-| user_id             | integer | null: false |
+| user_id             | integer | null: false foreign_key: true|
 ### Association
 
-- belongs_to : user
-- has_one : buy
+- belongs_to :user
+- has_one :buy
 
 
 ## addresses テーブル
@@ -67,7 +67,7 @@ Things you may want to cover:
 | Column       | Type   | Options     |
 | ------       | ------ | -------     |
 | postal_code  | string | null: false |
-| sipping_area |integer | null: false |
+| sipping_area_id |integer | null: false |
 | address      | string | null: false |
 | building     | string |             |
 | phone        | string | null: false |
@@ -87,6 +87,6 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to : item
-- has_one : address
-- belongs_to : user
+- belongs_to :item
+- has_one :address
+- belongs_to :user
