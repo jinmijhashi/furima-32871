@@ -81,8 +81,8 @@ Things you may want to cover:
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
-| user_id| references  |  null: false, foreign_key: true      |
-| items  | references  |  null: false, foreign_key: true      |
+| user_id　　　　| references  |  null: false, foreign_key: true      |
+| items  　　　　| references  |  null: false, foreign_key: true      |
 | 
 
 ### Association
