@@ -55,18 +55,19 @@ Things you may want to cover:
 | sipping_area_id        | integer | null: false |
 | days_to_ship_id        | integer| null: false |
 | price               | integer | null: false |
+| user_id             | integer | null: false |
 ### Association
 
 - belongs_to : user
 - has_one : buy
 
 
-## address テーブル
+## addresses テーブル
 
 | Column       | Type   | Options     |
 | ------       | ------ | -------     |
 | postal_code  | string | null: false |
-| prefectures  | integer | null: false |
+| sipping_area |integer | null: false |
 | address      | string | null: false |
 | building     | string |             |
 | phone        | string | null: false |
