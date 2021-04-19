@@ -28,6 +28,20 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
+
+      it "passwordが英数字混合でないと登録できない" do
+        @user.password = 'aaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        # テストコード実行→処理が止まったら@user.errors.full_messagesをターミナルで入力
+      end
+
+      it "passwordが英数字混合でないと登録できない" do
+        @user.password = '888888'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+       end
+
      it "last_nameが空では登録できない" do
         @user.last_name = ''
         @user.valid?
@@ -52,7 +66,7 @@ RSpec.describe User, type: :model do
         @user.birth_date = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Birth date can't be blank")
-      end   
+      end  
     end
   end
  
