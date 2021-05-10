@@ -82,7 +82,6 @@ RSpec.describe Item, type: :model do
           it "priceが空では保存できない" do
             @item.price= ''
             @item.valid?
-            binding.pry
             expect(@item.errors.full_messages).to include("Price is not a number")
           end 
         end
