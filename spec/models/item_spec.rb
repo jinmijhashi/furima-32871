@@ -78,8 +78,14 @@ RSpec.describe Item, type: :model do
             @item.days_to_ship_id = '1'
             @item.valid?
             expect(@item.errors.full_messages).to include("Days to ship must be other than 1")
-            end
-      end
+          end
+          it "priceが空では保存できない" do
+            @item.price= ''
+            @item.valid?
+            binding.pry
+            expect(@item.errors.full_messages).to include("Price is not a number")
+          end 
+        end
  end
 end
 
