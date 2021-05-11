@@ -11,8 +11,9 @@ class Item < ApplicationRecord
   validates :category_id, :shipping_id, :status_id, :days_to_ship_id, numericality: { other_than: 1 } 
   validates :shipping_area_id, numericality: { other_than: 0 }
   validates :price, presence: true, format: {with: VALID_PRICEL_HALF}, numericality:{ only_integer: true,
-    greater_than: 300, less_than: 10000000
+    greater_than: 299, less_than: 10000000
     }
+ 
    
   
   has_one_attached :image
