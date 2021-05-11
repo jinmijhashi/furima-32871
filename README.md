@@ -55,7 +55,8 @@ Things you may want to cover:
 | sipping_area_id        | integer | null: false |
 | days_to_ship_id        | integer| null: false |
 | price               | integer | null: false |
-| user_id             | integer | null: false foreign_key: true|
+| user_id             | integer | null: false、foreign_key: true|
+<!-- | user | references | null: false, foreign_key: true| -->
 ### Association
 
 - belongs_to :user
