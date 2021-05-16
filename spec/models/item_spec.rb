@@ -68,15 +68,15 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Status must be other than 1')
       end
-      it 'days_to_ship_idが空では登録できない' do
-        @item.days_to_ship_id = ''
+      it 'shipdate_idが空では登録できない' do
+        @item.shipdate_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include('Days to ship is not a number')
+        expect(@item.errors.full_messages).to include('Shipdate is not a number')
       end
-      it 'days_to_ship_idが1では登録できない' do
-        @item.days_to_ship_id = 1
+      it 'shipdate_idが1では登録できない' do
+        @item.shipdate_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Days to ship must be other than 1')
+        expect(@item.errors.full_messages).to include('Shipdate must be other than 1')
       end
       it 'priceが空では保存できない' do
         @item.price = ''
