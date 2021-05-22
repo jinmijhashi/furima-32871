@@ -28,6 +28,16 @@ class ItemsController < ApplicationController
    
   end
 
+  def update
+    
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+      
+    else
+      render :edit
+    end
+  end  
+
   private
 
   def redirect_root
@@ -38,16 +48,6 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-  def update
-    
-    if @item.update(item_params)
-      redirect_to item_path(@item)
-      
-    else
-      render :edit
-    end
-  end
-
   
 
   def item_params
